@@ -1,0 +1,18 @@
+syntax = "proto3";
+package autenticador;
+
+service Autenticador {
+    rpc autenticar (AuthenticationRequest) returns (AuthenticationReply) {};
+}
+
+message AuthenticationRequest {
+    optional string nombre = 1;
+    optional string lugar_nacimiento = 2;
+    optional int32 anno_nacimiento = 3;
+    optional string contrasena = 4; 
+}
+
+message AuthenticationReply {
+    optional string message = 1;
+    optional bool status = 2;
+}
